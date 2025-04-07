@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>雾都漫游·重庆旅游指南</title>
+    <style>
+        :root {
+            --chongqing-red: #e63946;  /* 洪崖洞红 */
+            --mountain-gray: #2d3436;  /* 山城雾灰 */
+            --river-green: #2ecc71;    /* 两江生态绿 */
+            --night-gold: #f1c40f;     /* 不夜城金 */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            font-family: 'Microsoft YaHei', sans-serif;
+        }
+
+        /* 左右分栏布局 */
+        .container {
+            display: flex;
+            min-height: 100vh;
+            background: linear-gradient(to right, #f8f9fa 30%, #ffffff 70%);
+        }
+
+        /* 左侧导航区 */
+        .nav-panel {
+            width: 300px;
+            background: rgba(230, 57, 70, 0.95);
+            padding: 2rem;
+            position: fixed;
+            height: 100vh;
+            box-shadow: 5px 0 20px rgba(0,0,0,0.1);
+        }
+
+        .nav-header {
+            color: white;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--river-green);
+            padding-left: 1rem;
+        }
+
+        .nav-list {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .nav-link {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            padding: 1rem;
+            margin: 0.8rem 0;
+            display: block;
+            border-radius: 5px;
+            transition: all 0.3s;
+            background: linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.1) 100%);
+        }
+
+        .nav-link:hover {
+            transform: translateX(15px);
+            background: var(--night-gold);
+            color: var(--mountain-gray);
+        }
+
+        /* 右侧内容区 */
+        .content-panel {
+            flex: 1;
+            margin-left: 300px;
+            padding: 3rem 5rem;
+        }
+
+        /* 景点卡片 */
+        .attraction-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--chongqing-red);
+        }
+
+        .time-tip {
+            background: var(--river-green);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+
+        .decorative-line {
+            height: 3px;
+            background: linear-gradient(to right, var(--chongqing-red), var(--night-gold));
+            margin: 2rem 0;
+        }
+
+        /* Citywalk路线样式 */
+        .route-card {
+            border: 2px solid var(--river-green);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 左侧导航 -->
+        <nav class="nav-panel">
+            <div class="nav-header">
+                <h1>雾都漫游指南</h1>
+                <p>探索8D魔幻山城</p>
+            </div>
+            <ul class="nav-list">
+                <li><a href="#featured" class="nav-link">🌟 特色景点</a></li>
+                <li><a href="#citywalk" class="nav-link">🚶 Citywalk路线</a></li>
+            </ul>
+        </nav>
+
+        <!-- 右侧内容 -->
+        <main class="content-panel">
+            <!-- 特色景点 -->
+            <section id="featured">
+                <div class="attraction-card">
+                    <h2>洪崖洞 | 千与千寻现实版</h2>
+                    <div class="decorative-line"></div>
+                    <div class="time-tip">最佳时段：18:00-22:00（夜景绝佳）</div>
+                    <img src="洪崖洞.jpg" alt="洪崖洞">
+                    <p>依山而建的吊脚楼群在暮色中次第亮起，建议避开节假日高峰（2024年国庆接待超100万人次）:cite[1]，选择工作日晚间前往。11层立体景观中隐藏着地道火锅店和观景平台，每层出口通向不同街道的魔幻体验不容错过:cite[3]:cite[8]。</p>
+                </div>
+
+                <div class="attraction-card">
+                    <h2>磁器口古镇 | 千年码头文化</h2>
+                    <div class="time-tip">最佳时段：8:00-10:00（避开人流）</div>
+                    <img src="https://via.placeholder.com/800x500" alt="磁器口">
+                    <p>清晨的青石板路最能体现巴渝风情，推荐体验手工炒制火锅底料（专注40年的老店）:cite[3]。注意周末人流密集，建议工作日前往。特色美食毛血旺建议选择老字号店铺:cite[8]。</p>
+                </div>
+            </section>
+
+            <!-- Citywalk路线 -->
+            <section id="citywalk">
+                <div class="attraction-card">
+                    <h2>📌 下浩里人文路线</h2>
+                    <div class="route-card">
+                        <h3>路线：下浩老街 → 龙门浩 → 山城步道:cite[4]:cite[7]</h3>
+                        <div class="time-tip">建议时长：3小时 | 最佳时段：15:00-18:00</div>
+                        <p>🔸 下浩里：改造后的老街保留青砖旧瓦，体验爬坡上坎的独特游览方式（大学生志愿者提供免费讲解）:cite[4]<br>
+                        🔸 龙门浩：民国建筑群中寻找《漫游记》同款机位，退台式设计尽览两江风光:cite[8]<br>
+                        🔸 山城步道：悬崖茶馆品茶听书，感受老重庆烟火气:cite[3]</p>
+                    </div>
+
+                    <div class="route-card">
+                        <h3>路线：李子坝 → 三层马路 → 鹅岭二厂:cite[6]:cite[7]</h3>
+                        <div class="time-tip">建议时长：4小时 | 最佳时段：9:00-12:00</div>
+                        <p>🔸 轻轨穿楼：拍摄"列车进楼"魔幻场景（每小时6班次）<br>
+                        🔸 抗战遗址：探访刘湘公馆等13处文物建筑:cite[6]<br>
+                        🔸 文创园区：在《从你的全世界路过》取景地喝网红咖啡:cite[8]</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // 滚动监听高亮导航
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            sections.forEach(sec => {
+                const rect = sec.getBoundingClientRect();
+                if(rect.top <= 150 && rect.bottom >= 150) {
+                    navLinks.forEach(link => {
+                        link.style.background = '';
+                        if(link.getAttribute('href') === `#${sec.id}`) {
+                            link.style.background = 'linear-gradient(90deg, var(--night-gold) 0%, var(--chongqing-red) 100%)';
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
